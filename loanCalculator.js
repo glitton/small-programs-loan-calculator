@@ -23,6 +23,7 @@ function calculateMonthlyPayment(
     loanAmount *
     (monthlyInterestRate /
       (1 - Math.pow(1 + monthlyInterestRate, -loanDurationInMonths)));
+  monthlyPayment = monthlyPayment.toFixed(2);
   return monthlyPayment;
 }
 
@@ -43,4 +44,36 @@ while (true) {
     prompt(MESSAGES["invalidNumber"]);
     annualPercentageRate = input.question();
   }
+
+  prompt(MESSAGES["loanDurationInYears"]);
+  let loanDurationInYears = input.question();
+  while (invalidNumber(loanDurationInYears)) {
+    prompt(MESSAGES["invalidNumber"]);
+    loanDurationInYears = input.question();
+  }
+
+  prompt(`You entered:\n
+ - a loan amount of $${loanAmount} dollars\n
+ - with an annual percentage rate of ${annualPercentageRate} percent\n
+ - and a loan term of ${loanDurationInYears} years.\n
+ If your input is correct, press 'y' to continue.  To start over press 'x'`);
+  let userInput = input.question();
+  console.clear();
+
+  if (userInput === "x") continue;
+
+  let userMonthlyPayment = calculateMonthlyPayment(
+    loanAmount,
+    annualPercentageRate,
+    loanDurationInYears
+  );
+
+  `${prompt(MESSAGES["monthlyPayment"])}${userMonthlyPayment}`;
+
+  prompt(MESSAGES["anotherCalculation"]);
+
+  let answer = input.question();
+  console.clear();
+
+  if (answer !== "y") break;
 }
