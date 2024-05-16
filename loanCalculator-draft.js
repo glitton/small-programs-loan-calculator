@@ -7,9 +7,9 @@ const input = require("readline-sync");
 
 let loanAmount = 100000;
 let loanDurationInYears = 5;
-let annualPercentageRate = 3 / 100;
+let annualPercentageRate = 3;
 
-let monthlyInterestRate = annualPercentageRate / 12;
+let monthlyInterestRate = annualPercentageRate / 100 / 12;
 let loanDurationInMonths = loanDurationInYears * 12;
 
 let monthlyPayment =
