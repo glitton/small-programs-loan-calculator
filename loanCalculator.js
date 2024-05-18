@@ -6,10 +6,12 @@ function prompt(message) {
 }
 
 function invalidNumber(number) {
-  return number.trimStart() === "" || Number.isNaN(Number(number));
+  return (
+    number.trimStart() === "" ||
+    Number.isNaN(Number(number)) ||
+    Number(number) < 0
+  );
 }
-
-// Validate APR, need to be not greater than 20% or something
 
 function calculateMonthlyPayment(
   loanAmount,
@@ -57,7 +59,13 @@ while (true) {
  - with an annual percentage rate of ${annualPercentageRate} percent\n
  - and a loan term of ${loanDurationInYears} years.\n
  If your input is correct, press 'y' to continue.  To start over press 'x'`);
+
   let userInput = input.question();
+  while (!["y", "x"].includes(userInput)) {
+    prompt(MESSAGES["invalidInput"]);
+    userInput = input.question();
+  }
+
   console.clear();
 
   if (userInput === "x") continue;
@@ -68,12 +76,16 @@ while (true) {
     loanDurationInYears
   );
 
-  `${prompt(MESSAGES["monthlyPayment"] + "$" + userMonthlyPayment)}`;
-
+  prompt(`${MESSAGES["monthlyPayment"]}$${userMonthlyPayment}`);
   prompt(MESSAGES["anotherCalculation"]);
 
   let answer = input.question();
   console.clear();
+
+  while (!["y", "x"].includes(answer)) {
+    prompt(MESSAGES["choice"]);
+    answer = input.question();
+  }
 
   if (answer !== "y") break;
 }

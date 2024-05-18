@@ -1,13 +1,13 @@
 {
   "welcome": "Welcome to Your Loan Calculator!",
   "description": "This calculator provides your monthly payments with interest compounding monthly.",
-  "loanAmount": "Enter your loan amount in whole US dollars (no cents) without using commas. ",
+  "loanAmount": "Enter your loan amount in whole US dollars (no cents) without using commas or other special symbols. ",
   "annualPercentageRate": "What is your annual interest rate?  For example, type 5 for five percent. ",
   "loanDurationInYears": "What loan term in years are you interested in?",
   "monthlyPayment": "You're monthly payment is: ",
   "invalidNumber": "Sorry you entered an invalid number. Try again.",
+  "invalidInput": "Sorry you entered an invalid input. Enter 'y' for yes or 'x' to start over.",
   "confirmation": "You entered this information: If this is correct, please 'y' to continue.  Press 'n' to start over",
-  "operation": "What operation would you like to perform? 1) Add 2) Subtract 3) Multiply 4) Divide",
-  "choice": "Your input is invalid.  You must choose 1, 2, 3 or 4",
-  "anotherCalculation": "Do you want to do another calculation? Type 'y' for yes or press 'e' to end."
+  "anotherCalculation": "Do you want to do another calculation? Type 'y' for yes or press 'x' to end.",
+  "choice": "Sorry you entered an invalid input. Enter 'y' for yes or 'x' to end."
 }
