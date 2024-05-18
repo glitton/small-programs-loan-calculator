@@ -1,9 +1,9 @@
 {
-  "welcome": "Welcome to Car Loan Calculator!",
+  "welcome": "Welcome to Your Loan Calculator!",
   "description": "This calculator provides your monthly payments with interest compounding monthly.",
   "loanAmount": "Enter your loan amount in whole US dollars (no cents) without using commas. ",
   "annualPercentageRate": "What is your annual interest rate?  For example, type 5 for five percent. ",
-  "loanDurationInYears": "What loan term in years are you interested in?  We offer 1, 3, 5, and 7 years. ",
+  "loanDurationInYears": "What loan term in years are you interested in?",
   "monthlyPayment": "You're monthly payment is: ",
   "invalidNumber": "Sorry you entered an invalid number. Try again.",
   "confirmation": "You entered this information: If this is correct, please 'y' to continue.  Press 'n' to start over",

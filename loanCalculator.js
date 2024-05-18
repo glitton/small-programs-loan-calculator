@@ -68,7 +68,7 @@ while (true) {
     loanDurationInYears
   );
 
-  `${prompt(MESSAGES["monthlyPayment"])}${userMonthlyPayment}`;
+  `${prompt(MESSAGES["monthlyPayment"] + "$" + userMonthlyPayment)}`;
 
   prompt(MESSAGES["anotherCalculation"]);
 
