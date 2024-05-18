@@ -9,7 +9,7 @@ function invalidNumber(number) {
   return (
     number.trimStart() === "" ||
     Number.isNaN(Number(number)) ||
-    Number(number) < 0
+    Number(number) <= 0
   );
 }
 

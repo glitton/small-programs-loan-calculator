@@ -5,7 +5,7 @@
   "annualPercentageRate": "What is your annual interest rate?  For example, type 5 for five percent. ",
   "loanDurationInYears": "What loan term in years are you interested in?",
   "monthlyPayment": "You're monthly payment is: ",
-  "invalidNumber": "Sorry you entered an invalid number. Try again.",
+  "invalidNumber": "Sorry you entered an invalid number. You must enter a positive number greater than 0.",
   "invalidInput": "Sorry you entered an invalid input. Enter 'y' for yes or 'x' to start over.",
   "confirmation": "You entered this information: If this is correct, please 'y' to continue.  Press 'n' to start over",
   "anotherCalculation": "Do you want to do another calculation? Type 'y' for yes or press 'x' to end.",
