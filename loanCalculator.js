@@ -18,14 +18,15 @@ function calculateMonthlyPayment(
   annualPercentageRate,
   loanDurationInYears
 ) {
-  let loanDurationInMonths = loanDurationInYears * 12;
-  let monthlyInterestRate = annualPercentageRate / 100 / 12;
+  let loanDurationInMonths = Number(loanDurationInYears) * 12;
+  let monthlyInterestRate = Number(annualPercentageRate) / 100 / 12;
 
   let monthlyPayment =
-    loanAmount *
+    Number(loanAmount) *
     (monthlyInterestRate /
       (1 - Math.pow(1 + monthlyInterestRate, -loanDurationInMonths)));
   monthlyPayment = monthlyPayment.toFixed(2);
+
   return monthlyPayment;
 }
 
