@@ -1,34 +1,6 @@
 const input = require("readline-sync");
 const MESSAGES = require("./loan_calculator_messages.json");
-
-function prompt(message) {
-  console.log(`=> ${message}`);
-}
-
-function invalidNumber(number) {
-  return (
-    number.trimStart() === "" ||
-    Number.isNaN(Number(number)) ||
-    Number(number) <= 0
-  );
-}
-
-function calculateMonthlyPayment(
-  loanAmount,
-  annualPercentageRate,
-  loanDurationInYears
-) {
-  let loanDurationInMonths = Number(loanDurationInYears) * 12;
-  let monthlyInterestRate = Number(annualPercentageRate) / 100 / 12;
-
-  let monthlyPayment =
-    Number(loanAmount) *
-    (monthlyInterestRate /
-      (1 - Math.pow(1 + monthlyInterestRate, -loanDurationInMonths)));
-  monthlyPayment = monthlyPayment.toFixed(2);
-
-  return monthlyPayment;
-}
+import { prompt, invalidNumber, calculateMonthlyPayment } from "./utils.js";
 
 prompt(MESSAGES["welcome"]);
 prompt(MESSAGES["description"]);
