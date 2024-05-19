@@ -62,14 +62,14 @@ while (true) {
  If your input is correct, press 'y' to continue.  To start over press 'x'`);
 
   let userInput = input.question();
-  while (!["y", "x"].includes(userInput)) {
+  while (!["y", "n"].includes(userInput)) {
     prompt(MESSAGES["invalidInput"]);
     userInput = input.question();
   }
 
   console.clear();
 
-  if (userInput === "x") continue;
+  if (userInput === "n") continue;
 
   let userMonthlyPayment = calculateMonthlyPayment(
     loanAmount,
@@ -83,10 +83,11 @@ while (true) {
   let answer = input.question();
   console.clear();
 
-  while (!["y", "x"].includes(answer)) {
+  while (!["y", "n"].includes(answer)) {
     prompt(MESSAGES["choice"]);
     answer = input.question();
   }
 
   if (answer !== "y") break;
+  console.clear();
 }
