@@ -13,13 +13,6 @@ function invalidNumber(number) {
   );
 }
 
-// function invalidChoice(choice, message) {
-//   while (!["y", "n", "X"].includes(choice)) {
-//     prompt(MESSAGES[message]);
-//     choice = input.question();
-//   }
-// }
-
 function calculateMonthlyPayment(
   loanAmount,
   annualPercentageRate,
@@ -71,7 +64,6 @@ while (true) {
  If your input is correct, press 'y' to continue.  To start over press 'n'`);
 
   let userInput = input.question();
-  // invalidChoice(userInput, "invalidInput");
   while (!["y", "n"].includes(userInput)) {
     prompt(MESSAGES["invalidInput"]);
     userInput = input.question();
