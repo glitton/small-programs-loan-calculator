@@ -79,7 +79,7 @@ while (true) {
 
   console.clear();
 
-  if (userInput === "n") continue;
+  if (userInput === "y") continue;
 
   let userMonthlyPayment = calculateMonthlyPayment(
     loanAmount,
