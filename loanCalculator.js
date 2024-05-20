@@ -59,7 +59,7 @@ while (true) {
  - a loan amount of $${loanAmount} dollars\n
  - with an annual percentage rate of ${annualPercentageRate} percent\n
  - and a loan term of ${loanDurationInYears} years.\n
- If your input is correct, press 'y' to continue.  To start over press 'x'`);
+ If your input is correct, press 'y' to continue.  To start over press 'n'`);
 
   let userInput = input.question();
   while (!["y", "n"].includes(userInput)) {

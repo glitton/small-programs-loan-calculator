@@ -1,7 +1,7 @@
 {
   "welcome": "Welcome to Your Loan Calculator!",
   "description": "This calculator provides your monthly payments with interest compounding monthly.",
-  "loanAmount": "Enter your loan amount in whole US dollars (no cents) without using commas or other special symbols. ",
+  "loanAmount": "Enter your loan amount in whole US dollars without using commas or other special symbols. ",
   "annualPercentageRate": "What is your annual interest rate?  For example, type 5 for five percent. ",
   "loanDurationInYears": "What loan term in years are you interested in?",
   "monthlyPayment": "You're monthly payment is: ",
