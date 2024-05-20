@@ -13,6 +13,14 @@ function invalidNumber(number) {
   );
 }
 
+function invalidChoice(userChoice, message) {
+  while (!["y", "n"].includes(userChoice)) {
+    prompt(MESSAGES[message]);
+    userChoice = input.question();
+  }
+  console.clear();
+}
+
 function calculateMonthlyPayment(
   loanAmount,
   annualPercentageRate,
@@ -30,12 +38,7 @@ function calculateMonthlyPayment(
   return monthlyPayment;
 }
 
-function invalidInput(userChoice, message) {
-  while (!["y", "n"].includes(userChoice)) {
-    prompt(MESSAGES[message]);
-    userChoice = input.question();
-  }
-}
+/* ---- START OF PROGRAM ----- */
 
 prompt(MESSAGES["welcome"]);
 prompt(MESSAGES["description"]);
@@ -69,13 +72,7 @@ while (true) {
  If your input is correct, press 'y' to continue.  To start over press 'n'`);
 
   let userInput = input.question();
-  invalidInput(userInput, "invalidInput");
-  // while (!["y", "n"].includes(userInput)) {
-  //   prompt(MESSAGES["invalidInput"]);
-  //   userInput = input.question();
-  // }
-
-  console.clear();
+  invalidChoice(userInput, "invalidInput");
 
   if (userInput === "n") continue;
 
@@ -85,17 +82,15 @@ while (true) {
     loanDurationInYears
   );
 
+  prompt(`A loan amount of $${loanAmount} dollars with an annual percentage rate of ${annualPercentageRate} percent
+    and a loan term of ${loanDurationInYears} years means that:\n`);
   prompt(`${MESSAGES["monthlyPayment"]}$${userMonthlyPayment}`);
   prompt(MESSAGES["anotherCalculation"]);
 
   let answer = input.question();
   console.clear();
 
-  while (!["y", "n"].includes(answer)) {
-    prompt(MESSAGES["choice"]);
-    answer = input.question();
-  }
+  invalidChoice(answer, "choice");
 
   if (answer !== "y") break;
-  console.clear();
 }
