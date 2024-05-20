@@ -13,6 +13,15 @@ function invalidNumber(number) {
   );
 }
 
+function invalidChoice(userChoice, message) {
+  while (!["y", "n", "x"].includes(userChoice)) {
+    prompt(MESSAGES[message]);
+    userChoice = input.question();
+  }
+
+  return userChoice;
+}
+
 function calculateMonthlyPayment(
   loanAmount,
   annualPercentageRate,
@@ -62,10 +71,11 @@ while (true) {
  If your input is correct, press 'y' to continue.  To start over press 'n'`);
 
   let userInput = input.question();
-  while (!["y", "n"].includes(userInput)) {
-    prompt(MESSAGES["invalidInput"]);
-    userInput = input.question();
-  }
+  // while (!["y", "n"].includes(userInput)) {
+  //   prompt(MESSAGES["invalidInput"]);
+  //   userInput = input.question();
+  // }
+  invalidChoice(userInput, "invalidInput");
 
   console.clear();
 
@@ -83,11 +93,10 @@ while (true) {
   let answer = input.question();
   console.clear();
 
-  while (!["y", "n"].includes(answer)) {
+  while (!["y", "x"].includes(answer)) {
     prompt(MESSAGES["choice"]);
     answer = input.question();
   }
-
-  if (answer !== "y") break;
   console.clear();
+  if (answer !== "y") break;
 }
