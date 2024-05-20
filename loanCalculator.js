@@ -30,6 +30,13 @@ function calculateMonthlyPayment(
   return monthlyPayment;
 }
 
+function invalidInput(userChoice, message) {
+  while (!["y", "n"].includes(userChoice)) {
+    prompt(MESSAGES[message]);
+    userChoice = input.question();
+  }
+}
+
 prompt(MESSAGES["welcome"]);
 prompt(MESSAGES["description"]);
 
@@ -62,10 +69,11 @@ while (true) {
  If your input is correct, press 'y' to continue.  To start over press 'n'`);
 
   let userInput = input.question();
-  while (!["y", "n"].includes(userInput)) {
-    prompt(MESSAGES["invalidInput"]);
-    userInput = input.question();
-  }
+  invalidInput(userInput, "invalidInput");
+  // while (!["y", "n"].includes(userInput)) {
+  //   prompt(MESSAGES["invalidInput"]);
+  //   userInput = input.question();
+  // }
 
   console.clear();
 
